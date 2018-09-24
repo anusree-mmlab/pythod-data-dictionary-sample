@@ -6,4 +6,13 @@ f = open('./dict.json', 'r')
 dictionarydata = json.load(f)
 f.close()
 
-print(dictionarydata['India'])
+word = input('Enter word : ')
+print(word)
+
+# Find the word in the dictionary
+if word in dictionarydata.keys():
+    resultList = dictionarydata[word]
+    for meaning in resultList:
+        print(meaning)
+else:
+    print('Word not found')        
